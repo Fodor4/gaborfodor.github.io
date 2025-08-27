@@ -1,194 +1,645 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-body {
-    background-color: #D7B520;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  will-change: transform, opacity;
 }
 
-main {
-    margin: 0 auto;
-    width: 80%;
-    padding: 20px;
-    border: 2px solid #ddd;
-    border-radius: 20px;
-    background-color: #fff;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr minmax(200px);
-    gap: 20px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "header header header"
-        "aside section-1 section-1"
-        "aside section-2 section-2"
-        "aside section-3 section-3"
-        "footer footer footer";
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-header {
-    grid-area: header;
-    border: 2px solid #97b1c8;
-    border-radius: 10px;
-    height: 400px;
-    overflow: hidden;
+.container {
+  width: 100%;
 }
 
-.header-footer-picture {
-    width: auto;
-    overflow: hidden;
+.navbar {
+  background-color: rgb(11, 4, 4);
+  font-family: "Rubik Wet Paint", system-ui;
+  padding: 5px 20px;
+  max-width: 100%;
+  max-height: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.section-picture {
-    width: 250px;
-    height: 200px;
-    float: left;
-    margin: 20px;
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.navbar a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.main-video {
+  grid-area: main-video;
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+h1 {
+  color: white;
+  font-family: "Rubik Wet Paint", system-ui;
+  font-size: 80px;
+}
+
+
+.main-video video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 30%;
+}
+
+.link {
+  display: inline-block;
+  margin: 150px auto 0;
+  padding: 10px 25px;
+  border: 2px 0px 1px 0px solid rgb(255, 255, 255);
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  font-family: "Rubik Wet Paint", system-ui;
+  text-align: center;
+  position: relative;
+}
+
+.link::after,
+.link2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.link:hover::after,
+.link2:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.link2 {
+  display: inline-block;
+  margin: 45px auto 0;
+  padding: 5px 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  font-family: "Rubik Wet Paint", system-ui;
+  text-align: center;
+  position: relative;
+}
+
+.main-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr 1fr;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  grid-auto-rows: auto;
+  gap: 0;
+  grid-auto-flow: row;
+  justify-items: stretch;
+  margin: 0 auto;
+  grid-template-areas:
+    "social social social"
+    "navbar navbar navbar"
+    "main-video main-video main-video"
+    "first-section first-section first-section"
+    "introduction-sub introduction-sub introduction-sub"
+    "why-me-section why-me-section why-me-section"
+    "middle-section middle-section middle-section"
+    "second-section second-section second-section"
+    "third-section third-section third-section"
+    "footer footer footer";
+  width: 100%;
+}
+
+.social {
+  grid-area: social;
+  background-color: #ffffff;
+}
+
+.social img {
+  width: 35px;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+
+.navbar {
+  grid-area: navbar;
+  border: 1px solid black;
+  text-align: right;
+  padding: 20px;
+}
+
+.first-section {
+  grid-area: first-section;
+  background-color: #ffffff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  height: 900px;
+  margin-bottom: 10px;
 }
 
 p {
-    line-height: 40px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 200;
+  font-size: 22px;
 }
 
-a {
-    text-decoration: none;
-    color: black;
+.middle-section {
+  grid-area: middle-section;
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 250px;
+  padding: 50px;
+  font-size: 28px;
+  font-weight: 200;
+  font-family: "Rubik Wet Paint", system-ui;
+  font-style: italic;
+}
+
+.why-me-section {
+  grid-area: why-me-section;
+  background-color: rgb(230, 230, 230);
+  padding: 50px 90px;
+  text-align: center;
+  font-family: "Rubik Wet Paint", system-ui;
+}
+
+.why-me-section h2 {
+  font-size: 60px;
+  margin-bottom: 70px;
+  color: black;
+}
+
+.why-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  justify-content: center;
+
+}
+
+.why-card {
+  background-color: black;
+  color: white;
+  padding: 40px 25px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+}
+
+.why-card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.why-card p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 200px;
+}
+
+.image-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+
+.szemelyi-edzo {
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.introduction {
+  max-width: 900px;
+  font-size: 30px;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+  border-radius: 20px;
+  padding: 60px;
+  padding-bottom: 30px;
+  line-height: 57px;
+  font-family: "Rubik Wet Paint", system-ui;
+}
+
+
+.second-section {
+  background-color: rgb(255, 255, 255);
+  font-family: "Rubik Wet Paint", system-ui;
+  text-align: center;
+  padding: 50px;
+  font-size: 32px;
 }
 
 h2 {
+  color: white;
+}
+
+.packages {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 80px 40px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  padding: 30px 25px;
+  width: 320px;
+  margin: 50px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: "Rubik Wet Paint", system-ui;
+}
+
+.card ul {
+  list-style: square;
+  padding: 10px;
+  margin: 0 0 20px 0;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.card .price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card .desc {
+  font-size: 13px;
+  color: #555;
+}
+
+.card.basic {
+  border: 3px solid #4CAF50;
+}
+
+.card.advanced {
+  border: 3px solid #FFC107;
+}
+
+.card.premium {
+  border: 3px solid #F44336;
+}
+
+.custom-offer {
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.custom-offer h3 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-family: "Rubik Wet Paint", system-ui;
+}
+
+.custom-button {
+  display: inline-block;
+  background-color: #f44336;
+  margin: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 22px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: "Rubik Wet Paint", system-ui;
+}
+
+.custom-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.second-section {
+  grid-area: second-section;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: black;
+}
+
+.second-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.second-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.second-section h2,
+.second-section .card {
+  position: relative;
+  z-index: 2;
+}
+
+.third-section {
+  grid-area: third-section;
+  background-color: rgb(155, 155, 155);
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 60px;
+  background-color: rgb(230, 230, 230);
+  justify-content: center;
+  align-items: stretch;
+}
+
+.map {
+  flex: 1 1 500px;
+  min-height: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-details {
+  flex: 1 1 300px;
+  background-color: black;
+  color: white;
+  border-radius: 12px;
+  padding: 60px;
+  font-family: "Rubik Wet Paint", system-ui;
+  font-size: 22px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  line-height: 1.8;
+}
+
+.contact-details i {
+  margin-right: 15px;
+  color: #f44336;
+  font-size: 26px;
+}
+
+.contact-details .subheading {
+  font-size: 22px;
+  margin-bottom: 30px;
+  color: #ccc;
+  font-family: "Quicksand", sans-serif;
+}
+
+.contact-details form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+}
+
+.contact-details form input[type="text"],
+.contact-details form input[type="email"],
+.contact-details form input[type="tel"],
+.contact-details form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+}
+
+.contact-details form textarea {
+  resize: vertical;
+}
+
+.contact-details form button {
+  background-color: #FF4A4A;
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.contact-details form button:hover {
+  background-color: #e63e3e;
+}
+
+
+.footer {
+  grid-area: footer;
+  max-height: 150px;
+  background-color: #000000;
+  text-align: center;
+  color: white;
+  padding: 40px;
+  font-family: "Rubik Wet Paint", system-ui;
+}
+
+.introduction-sub h1,
+.introduction-sub h2 {
     text-align: center;
-}
-
-aside {
-    grid-area: aside;
-    border: 2px solid #97b1c8;
-    background-color: #5b9bd5;
-    border-radius: 20px;
-}
-
-
-aside>div>div {
-    border: 2px solid #97b1c8;
-    border-radius: 20px;
-    padding: 10px;
-    margin: 10px;
-}
-
-input {
-    width: 400px;
-    height: 25px;
-}
-
-button {
-    width: 100px;
-    height: 30px;
-    border-radius: 20px;
-}
-
-select {
-    width: 180px;
-    text-align: center;
-}
-
-textarea {
-    resize: none;
-}
-
-aside nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-aside nav ul li {
     margin-bottom: 20px;
-    border: 2px solid #97b1c8;
-    width: auto;
-    padding: 20px;
-    border-radius: 20px;
-    margin: 10px;
+    color: #000000;
+    padding: 50px;
 }
 
-aside nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 155px;
+.introduction-sub ul {
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
-.section-1 {
-    grid-area: section-1;
-    border: 2px solid #97b1c8;
-    background-color: #fbe5d6;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: justify;
-    overflow: hidden;
+.introduction-sub li {
+    margin-bottom: 8px;
 }
 
-.section-2 {
-    grid-area: section-2;
-    border: 2px solid #97b1c8;
-    background-color: #fff2cc;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: justify;
-    overflow: hidden;
+.intr-section1 {
+  line-height: 50px;
+  font-family: "Rubik Wet Paint", system-ui;
 }
 
-.section-3 {
-    grid-area: section-3;
-    border: 2px solid #97b1c8;
-    background-color: #ddebf7;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: justify;
-    overflow: hidden;
+.intr-section2 {
+  line-height: 50px;
+  font-family: "Rubik Wet Paint", system-ui;
 }
 
-footer {
-    grid-area: footer;
-    border: 2px solid #97b1c8;
-    border-radius: 20px;
-    height: 400px;
-    overflow: hidden;
+.introduction-sub {
+  grid-area: introduction-sub;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 40px 20px;
+  text-align: justify;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: rgb(230, 230, 230);
 }
 
-@media (max-width: 768px) {
-    main {
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas:
-        "header header"
-        "aside aside"
-        "section-1 section-1"
-        "section-2 section-2"
-        "section-3 section-3"
-        "footer footer";
-    }
-  
-    input, select, textarea {
-      width: 100%;
-    }
-  
-    .section-picture {
-      float: none;
-      display: block;
-      margin: 0 auto 20px auto;
-      width: 100%;
-      height: auto;
-      max-width: 400px;
-    }
-  
-    aside nav ul li a {
-      padding: 0;
-      display: block;
-      text-align: center;
-    }
-  }
-  
+.introduction-sub li {
+  line-height: 40px;
+  font-family: "Rubik Wet Paint", system-ui;
+}
+
+.introduction-sub ul {
+  list-style-position: inside;
+  list-style-type: disc;
+  padding: 0;
+  margin: 20px auto;
+  text-align: center;
+  display: block;
+}
+
+.introduction-sub li {
+  display: block;
+  margin: 8px auto;
+}
+
+.float {
+  float: left; 
+  width: 30%; 
+  padding: 2px;
+  height: auto;
+  margin: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+.float2 {
+  float: right; 
+  width: 30%; 
+  padding: 2px;
+  height: auto;
+  margin: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}

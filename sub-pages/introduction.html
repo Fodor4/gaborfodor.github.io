@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fodor Coaching</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+<body>
+    <div class="container">
+
+        <div class="social">
+            <a href="https://www.facebook.com"><img src="../img/social/facebook.svg"
+                    alt="facebook"></a>
+            <a href="https://www.instagram.com"><img src="../img/social/instagram.svg"
+                    alt="instagram"></a>
+            <a href="https://www.youtube.com"><img src="../img/social/youtube.svg" alt="youtube"></a>
+            <a href="https://www.tiktok.com"><img src="../img/social/tik-tok.svg" alt="tiktok"></a>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="../index.html">Kezdőlap</a></li>
+                <li><a href="#first-section">Bemutatkozás</a></li>
+                <li><a href="../index.html#packs">Csomagok</a></li>
+                <li><a href="#edzes">Órarend</a></li>
+                <li><a href="#contact">Kapcsolat</a></li>
+            </ul>
+        </div>
+        <div class="introduction-sub" id="first-section">
+            <h1>Szakmai múltam – az utam az edzői pályáig és azon túl</h1>
+            <img src="../img/gym-guy1.jpg" alt="Személyi edző" class="float">
+            <div class="intr-section1">
+                <p>A sport mindig is központi szerepet játszott az életemben. Gyerekkorom óta vonzott a mozgás, a
+                    teljesítmény, a kihívás – legyen szó csapatsportokról, erőnléti edzésekről vagy saját testsúlyos
+                    gyakorlatokról. Ahogy nőttem, a mozgás szeretete egyre tudatosabbá vált bennem, és nem csupán saját
+                    fejlődésem motivált, hanem az is, hogy másoknak segíthessek elérni a céljaikat. Ebből a belső
+                    késztetésből született meg bennem a döntés, hogy hivatásos személyi edző legyek.</p><br>
+
+                <p>Tanulmányaimat a Magyar Testnevelési és Sporttudományi Egyetemen végeztem, ahol szakedzői és
+                    életmódtanácsadói képesítést szereztem. A képzés során nemcsak az emberi test működését ismertem meg
+                    mélyrehatóan – anatómia, élettan, biomechanika –, hanem azt is, hogyan lehet tudományosan
+                    megalapozott,
+                    mégis emberközpontú módon támogatni valakit az életmódváltásban vagy akár a csúcsteljesítmény
+                    elérésében.</p><br>
+
+                <p style="text-align: center;">A diploma megszerzése után sem álltam meg a tanulásban. Számos hazai és nemzetközi tanfolyamon vettem
+                    részt, többek között: </p><br>
+            </div>
+            <ul>
+                <li> NASM Certified Personal Trainer (USA) </li>
+
+                <li> Precision Nutrition – Táplálkozási tanácsadó</li>
+
+                <li> Funkcionális tréningek, TRX, mobilitásfejlesztés és stretching tanfolyamok</li>
+
+                <li> Korrektív tréning és rehabilitációs mozgásprogramok</li>
+            </ul>
+            <br>
+            <br>
+            <p style="text-align: center;">Az elmúlt több mint 10 évben dolgoztam:</p>
+            <br>
+            <ul>
+                <li> teljesen kezdőkkel, akik életükben először léptek be edzőterembe,</li>
+
+                <li> elfoglalt irodistákkal, akik ülőmunka mellett kerestek egészségesebb egyensúlyt,</li>
+
+                <li> szülés után visszatérő hölgyekkel,</li>
+
+                <li> 50 év feletti vendégekkel, akik újra aktív életet akartak élni,</li>
+
+                <li> hobbi testépítőkkel, akik formát akartak hozni,</li>
+
+                <li> versenyre készülő sportolókkal, akik az utolsó %-ot akarták kihozni magukból.</li>
+            </ul>
+            <br>  <img src="../img/gym-guy3.jpg" alt="Személyi edző" class="float2">
+            <div class="intr-section2">
+                <p>Hiszem, hogy minden ember útja egyedi, ezért az edzéseimben nincs sablon. Mindenkivel személyesen
+                    beszélgetek az első alkalommal: feltérképezzük a kiindulási állapotot, a célokat, az akadályokat, a
+                    szokásokat. Ez alapján állítom össze az edzéstervet, táplálkozási irányelveket, és ha kell – a
+                    mentális
+                    támogatást is.</p>
+                <br> 
+                <p>Számomra az edzői munka nem csak gyakorlatok sorozata vagy kalóriák számolgatása. Ez egy kapcsolat,
+                    egy
+                    kísérés, egy közös út. A célom, hogy vendégeim ne csak jobban nézzenek ki, hanem jobban is érezzék
+                    magukat – testileg, lelkileg, mentálisan. Legyen szó néhány kiló leadásáról vagy egy maraton 
+                    lefutásáról, én ott vagyok, és segítek végigmenni az úton. </p>
+            </div>
+        </div>
+        <div class="third-section" id="contact">
+            <div class="contact-container">
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d21313.630349650593!2d20.75294295!3d48.1063043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2shu!4v1756303687280!5m2!1sen!2shu"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="contact-details">
+                    <h3>Elérhetőségek</h3>
+                    <div class="contact-wrapper">
+                        <div class="contact-info">
+                            <p class="subheading">Vedd fel velem a kapcsolatot, ha bármi kérdésed van!!</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 3525 Miskolc, Kitalált utca 12.</p>
+                            <p><i class="fas fa-phone-alt"></i> +36 30 123 4567</p>
+                            <p><i class="fas fa-envelope"></i> fodorgabor@fitnesz.hu</p>
+                        </div>
+                        <form id="contactForm">
+                            <label for="name">Név:</label>
+                            <input type="text" id="name" name="name" placeholder="Add meg a neved" required>
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Add meg az email címed" required>
+
+                            <label for="phone">Telefonszám:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Add meg a telefonszámod" required>
+
+                            <label for="message">Üzenet:</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Írd ide az üzeneted"
+                                required></textarea>
+
+                            <button type="submit">Küldés</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            © 2025 Fodor Gábor | Minden jog fenntartva.
+        </div>
+    </div>
+</body>
+
+</html>

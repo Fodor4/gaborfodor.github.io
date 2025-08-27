@@ -1,140 +1,202 @@
 <!DOCTYPE html>
-<html lang="hu">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strandolás</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fodor Coaching</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
 
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
 <body>
-    <main>
-        <header>
-            <img src="img/strand.jpg" alt="strand" class="header-footer-picture">
-        </header>
-        <aside>
-            <nav>
-                <ul>
-                    <li><a href="#balaton">Balaton</a></li>
-                    <li><a href="#tisza">Tisza-tó</a></li>
-                    <li><a href="#szelidi">Szelidi-tó</a></li>
-                </ul>
-            </nav>
-            <br>
-            <div class="form-content">
-                <h3>Kérem töltse ki a jelentkezési űrlapot</h3>
-                <br>
-                <div class="alt-adat">
-                    <form action="#" method="post">
-                        <label for="name" id="name">Név:</label>
-                        <input type="text" id="name" placeholder="pl.: Fodor Gábor" required>
-                        <br>
-                        <label for="email">E-mail:</label>
-                        <input type="email" name="email" id="email" placeholder="pl.: asdasd@gmail.com" required>
-                        <br>
-                        <label for="telefon">Tel.:</label>
-                        <input type="tel" name="telefon" id="telefon">
-                </div>
-                <br>
-                <div class="to">
-                    <label for="to">Melyik tó érdekli?</label><br><br>
-                    <select name="to" id="to">
-                        <option value="balaton">Balaton</option>
-                        <option value="tisza-to">Tisza-tó</option>
-                        <option value="szelidi-to">Szelidi-tó</option>
-                    </select>
-                </div>
-                <br>
-                <div class="ellatas">
-                    <label for="szallas">Milyen ellátás legyen?</label>
-                    <input type="checkbox" name="hotel" id="hotel">
-                    <label for="hotel">Szálloda</label>
-                    <input type="checkbox" name="apartman" id="apartman">
-                    <label for="apartman">Apartman</label>
-                    <input type="checkbox" name="camping" id="camping">
-                    <label for="kemping">Kemping</label>
-                </div>
-                <br>
-                <div class="ellatas">
-                    <label for="ellatas">Milyen ellátás legyen?</label><br><br>
-                    <label for="teljes">Teljes</label>
-                    <input type="radio" name="ellatas" id="teljes"><br>
-                    <label for="fel-panzio">Fél panzió</label>
-                    <input type="radio" name="ellatas" id="fel-panzio"><br>
-                    <label for="reggeli">Csak reggeli</label>
-                    <input type="radio" name="ellatas" id="csak-reggeli"><br>
-                    <label for="nem-kerek">Nem kérek ellátást</label>
-                    <input type="radio" name="ellatas" id="nem-kerek"><br>
-                </div>
-                <br>
-                <div class="uzenet">
-                    <label for="uzenet">Egyéb üzenet:</label><br><br>
-                    <textarea name="uzenet" id="uzenet" rows="15" cols="40"></textarea>
-                    <br><br>
-                    <button type="submit">Mehet</button>
-                    </form>
-                </div>
+  <div class="container">
+    <div class="social">
+      <a href="https://www.facebook.com"><img src="img/social/facebook.svg" alt="facebook"></a>
+      <a href="https://www.instagram.com"><img src="img/social/instagram.svg" alt="instagram"></a>
+      <a href="https://www.youtube.com"><img src="img/social/youtube.svg" alt="youtube"></a>
+      <a href="https://www.tiktok.com"><img src="img/social/tik-tok.svg" alt="tiktok"></a>
+    </div>
+    <div class="navbar">
+      <ul>
+        <li><a href="index.html">Kezdőlap</a></li>
+        <li><a href="#first-section">Bemutatkozás</a></li>
+        <li><a href="#packs">Csomagok</a></li>
+        <li><a href="#edzes">Órarend</a></li>
+        <li><a href="#contact">Kapcsolat</a></li>
+      </ul>
+    </div>
+    <div class="main-video">
+      <h1>Edzés. Fegyelem. Eredmény. Velem!</h1>
+      <a href="#first-section" class="link">&#8595;<br>Kezdjük el!</a>
+      <video autoplay muted loop>
+        <source src="video/main-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="first-section scroll-animate" id="first-section">
+      <div class="content-wrapper">
+        <div class="image-row">
+          <img src="img/dumbell3-arm.jpg" alt="Személyi edző" class="szemelyi-edzo">
+          <img src="img/dumbell2-arm-gym.jpg" alt="Személyi edző" class="szemelyi-edzo">
+        </div>
+        <div class="introduction">
+          <h3>Üdvözöllek!</h3>
+          <br>
+          <p>Fodor Gábor vagyok, személyi edző és életmód tanácsadó. Szenvedélyem, hogy segítsék az embereket
+            elérni
+            a
+            céljaikat – legyen szó fogyásról, izomépítésről vagy egészségesebb életmódról. Személyre szabott
+            edzéstervekkel, motivációval és szakértelemmel kísérlek végig az úton, hogy a legjobbat hozd ki
+            magadból.
+            Vágjunk bele együtt a változásba!</p>
+          <a href="sub-pages/introduction.html" class="link2">Szakmai múltam &#8594;</a>
+        </div>
+      </div>
+    </div>
+    <div class="middle-section scroll-animate">
+      <h2>Kezdd el ma – a holnapod most formálódik!</h2>
+      <br>
+      Ne várj a tökéletes pillanatra. Tedd meg az első lépést ma, és építs egy olyan jövőt, amire büszke leszel!
+    </div>
+    <div class="why-me-section">
+      <h2>Miért válassz engem?</h2>
+      <div class="why-cards scroll-animate">
+        <div class="why-card">
+          <h3>Személyre szabott figyelem</h3>
+          <p>Minden vendégem története egyedi, ezért nincs két egyforma edzéstervem sem. Meghallgatlak, megismerlek, és
+            az alapján állítok össze egy olyan utat, ami a te céljaidhoz és életviteledhez illeszkedik. Számomra te nem
+            csak egy újabb kliens vagy – a te sikered az én sikerem is.</p>
+        </div>
+        <div class="why-card scroll-animate">
+          <h3>Motiváció minden egyes napra</h3>
+          <p>Nem engedem, hogy félúton feladd. Tudom, milyen érzés, amikor nehéz elindulni vagy épp nem látod az
+            eredményt – de épp ezért vagyok itt. Melletted leszek, húzlak előre, és emlékeztetlek arra, miért is kezdted
+            el az egészet. Együtt mindig van előre.</p>
+        </div>
+        <div class="why-card scroll-animate">
+          <h3>Komplex életmód-támogatás</h3>
+          <p>Nemcsak edzéseket kapsz tőlem, hanem egy átfogó támogatást. Étkezés, regeneráció, stresszkezelés – mind
+            része az egésznek. Hiszek abban, hogy a test és a lélek együtt halad, és ebben a szemléletben dolgozom veled
+            végig az utat.</p>
+        </div>
+        <div class="why-card scroll-animate">
+          <h3>Tapasztalat és elhivatottság</h3>
+          <p>Évek óta segítek embereknek formába lendülni, egészségesebb életet élni, vagy épp versenyre készülni. A
+            szakmai tudás mellett szívből csinálom, amit csinálok – ez az életem. És ha te is elhatároztad magad, akkor
+            biztos lehetsz benne: én mindent megteszek érted.</p>
+        </div>
+      </div>
+    </div>
+    <div class="second-section" id="packs">
+      <div class="second-video">
+        <video autoplay muted loop>
+          <source src="video/lifting-video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h2>Csomagok & Egyéni ajánlatkérés</h2>
+      <div class="packages scroll-animate">
+        <div class="card basic">
+          <h3>Alap Csomag – „Indulj el!”</h3>
+          <ul>
+            <li>Heti 2 edzés (60 perc / alkalom)</li>
+            <li>Állapotfelmérés & célkitűzés</li>
+            <li>Személyre szabott edzésterv</li>
+            <li>Online kapcsolat tartás</li>
+            <li>Táplálkozási tanácsadás</li>
+          </ul>
+          <p class="price">24 900 Ft / hó</p>
+          <p class="desc">Tökéletes azoknak, akik most vágnának bele az életmódváltásba!</p>
+        </div>
+
+        <div class="card advanced">
+          <h3>Haladó Csomag – „Szintlépés”</h3>
+          <ul>
+            <li>Heti 3 edzés (60 perc / alkalom)</li>
+            <li>Részletes állapotfelmérés</li>
+            <li>Egyéni edzésterv és haladáskövetés</li>
+            <li>Alap táplálkozási tanácsadás</li>
+            <li>Folyamatos motiváció & konzultáció</li>
+          </ul>
+          <p class="price">34 900 Ft / hó</p>
+          <p class="desc">Ajánlott, ha már van némi tapasztalatod, de komolyabban fejlődnél.</p>
+        </div>
+
+        <div class="card premium">
+          <h3>Prémium Csomag – „Maximális teljesítmény”</h3>
+          <ul>
+            <li>Heti 4 edzés + opcionális online edzés</li>
+            <li>Részletes testösszetétel-elemzés (InBody)</li>
+            <li>Teljes körű táplálkozási program</li>
+            <li>Edzésnapló, fejlődéskövetés, célra optimalizálás</li>
+            <li>24/7 kapcsolat (chat, hívás, email)</li>
+          </ul>
+          <p class="price">49 900 Ft / hó</p>
+          <p class="desc">Komoly céljaid vannak? Itt minden támogatást megkapsz!</p>
+        </div>
+        <div class="custom-offer">
+          <h3>Nem találtad meg a számodra ideális csomagot?</h3>
+          <a href="#kapcsolat" class="custom-button">Kérj egyéni ajánlatot!</a>
+        </div>
+      </div>
+    </div>
+    <div class="third-section" id="contact">
+      <div class="contact-container">
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d21313.630349650593!2d20.75294295!3d48.1063043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2shu!4v1756303687280!5m2!1sen!2shu"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact-details">
+          <h3>Elérhetőségek</h3>
+          <div class="contact-wrapper">
+            <div class="contact-info">
+              <p class="subheading">Vedd fel velem a kapcsolatot, ha bármi kérdésed van!!</p>
+              <p><i class="fas fa-map-marker-alt"></i> 3525 Miskolc, Kitalált utca 12.</p>
+              <p><i class="fas fa-phone-alt"></i> +36 30 123 4567</p>
+              <p><i class="fas fa-envelope"></i> fodorgabor@fitnesz.hu</p>
             </div>
-        </aside>
-        <section class="section-1" id="balaton">
-            <h2><i>Balaton</i></h2>
-            <br>
-            <p>
-                <img src="img/balaton.jpeg" alt="Balaton" class="section-picture">A Balaton Közép-Európa legnagyobb
-                édesvizű tava, Magyarország egyik legismertebb turisztikai célpontja.
-                A "magyar tengerként" is emlegetik, különösen a nyári hónapokban népszerű a fürdőzni vágyók körében. A
-                tó körül számos üdülőhely, strand és kemping található. A Balaton északi partja dombosabb, itt található
-                például Tihany, a híres apátsággal. A déli part laposabb, és különösen kedvelt a családosok körében a
-                sekély víz miatt. A tó nemcsak fürdőzésre alkalmas, hanem vitorlázásra, horgászásra és kerékpározásra
-                is. A Balaton-felvidéki Nemzeti Park védi a környező táj természeti értékeit. A tó vízszintjét
-                mesterségesen szabályozzák a Sió-csatornán keresztül. Télen a tó gyakran befagy, és akkor korcsolyázásra
-                vagy jégvitorlázásra is lehetőséget nyújt. A Balaton kulturális programokkal, fesztiválokkal is vonzza a
-                látogatókat.
-            </p>
-            <button class="back-button"><a href="index.html">Vissza</a></button>
-        </section>
-        <section class="section-2" id="tisza">
-            <h2><i>Tisza-tó</i></h2>
-            <br>
-            <p>
-                <img src="img/tisza-to.webp" alt="Tisza-tó" class="section-picture">A Tisza-tó Magyarország második
-                legnagyobb tava, és egy mesterséges víztározó, amelyet a Tisza folyó
-                felduzzasztásával hoztak létre. A tó Heves és Jász-Nagykun-Szolnok vármegyék határán fekszik. A 20.
-                század második felében épült, eredetileg árvízvédelmi célokkal. Az évek során azonban egyedülálló
-                ökológiai rendszer alakult ki benne, gazdag növény- és állatvilággal. A Tisza-tó különösen népszerű a
-                horgászok, kenusok és madármegfigyelők körében. A vízterületet rengeteg sziget, holtág és nádas tagolja,
-                így a vízitúrázás különösen izgalmas. A Poroszlón található Tisza-tavi Ökocentrum interaktív
-                kiállításaival és akváriumaival várja a látogatókat. A tó strandjai is egyre népszerűbbek, különösen
-                Abádszalók környékén. A Tisza-tónál figyelmet fordítanak a természetvédelemre, és szigorú szabályok
-                vonatkoznak a vízi járművek használatára. A tó ideális célpont a nyugodtabb, természetközeli
-                kikapcsolódást keresőknek.
-            </p>
-            <button class="back-button"><a href="index.html">Vissza</a></button>
-        </section>
-        <section class="section-3" id="szelidi">
-            <h2><i>Szelidi-tó</i></h2>
-            <br>
-            <p>
-                <img src="img/szelidi-to.jpg" alt="Szelidi-tó" class="section-picture">A Szelidi-tó Bács-Kiskun
-                vármegyében található, Kalocsa közelében. Ez egy természetes eredetű tó, amely
-                homokos partjával és tiszta vizével vonzza a látogatókat. A tó egyik különlegessége az enyhén sós vize,
-                amely gyógyhatásúnak számít. A Szelidi-tó nem túl nagy, de a nyári időszakban rendkívül népszerű
-                fürdőhely. A környező nádasok és erdők nyugodt, csendes légkört biztosítanak a pihenéshez. A tó körül
-                kialakított sétányokon és tanösvényeken kellemes sétákat lehet tenni. A helyi madárvilág különösen
-                gazdag, így a természetkedvelőknek is sok élményt nyújt. A Szelidi-tónál rendszeresen rendeznek
-                kulturális és zenei programokat, például a Szelidi-tó Fesztivált. A környéken kerékpáros túraútvonalak
-                is találhatók, így aktív kikapcsolódásra is van lehetőség. A Szelidi-tó ideális választás azoknak, akik
-                kisebb, nyugodtabb üdülőhelyet keresnek a természet közelében.
-            </p>
-            <button class="back-button"><a href="index.html">Vissza</a></button>
-        </section>
-        <footer>
-            <img src="img/strand.jpg" alt="strand" class="header-footer-picture">
-        </footer>
-    </main>
+            <form id="contactForm">
+              <label for="name">Név:</label>
+              <input type="text" id="name" name="name" placeholder="Add meg a neved" required>
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Add meg az email címed" required>
+
+              <label for="phone">Telefonszám:</label>
+              <input type="tel" id="phone" name="phone" placeholder="Add meg a telefonszámod" required>
+
+              <label for="message">Üzenet:</label>
+              <textarea id="message" name="message" rows="4" placeholder="Írd ide az üzeneted" required></textarea>
+
+              <button type="submit">Küldés &#8594;</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      © 2025 Fodor Gábor | Minden jog fenntartva.
+    </div>
+  </div>
 </body>
 
 </html>
