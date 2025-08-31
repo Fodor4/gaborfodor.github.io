@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fodor Coaching</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="description" content="Személyi edzés, csoportos órák és edzéstervek minden szinten. Találd meg a számodra legjobb testedzés lehetőséget!">
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+<body>
+    <div class="container">
+
+        <div class="social">
+            <a href="https://www.facebook.com"><img src="../img/social/facebook.svg"
+                    alt="facebook"></a>
+            <a href="https://www.instagram.com"><img src="../img/social/instagram.svg"
+                    alt="instagram"></a>
+            <a href="https://www.youtube.com"><img src="../img/social/youtube.svg" alt="youtube"></a>
+            <a href="https://www.tiktok.com"><img src="../img/social/tik-tok.svg" alt="tiktok"></a>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="../index.html">Kezdőlap</a></li>
+                <li><a href="#first-section">Bemutatkozás</a></li>
+                <li><a href="../index.html#packs">Csomagok</a></li>
+                <li><a href="orarend.html">Órarend</a></li>
+                <li><a href="referenciak.html">Referenciák</a></li>
+                <li><a href="#contact">Kapcsolat</a></li>
+            </ul>
+        </div>
+        <div class="first-section" id="first-section">
+            <div class="form-section">
+                <h2>Vedd fel velem a kapcsolatot – Egyedi ajánlat személyi edzéshez</h2>
+                <form action="#" method="POST" class="trainer-form">
+                    <label for="name">Név:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email cím:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Telefonszám:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="age">Életkor:</label>
+                    <input type="number" id="age" name="age" min="10" max="100" required>
+
+                    <label for="goal">Célod a személyi edzéssel:</label>
+                    <select id="goal" name="goal" required>
+                        <option value="">Kérlek válassz</option>
+                        <option value="fogyás">Fogyás</option>
+                        <option value="izomtomeg">Izomtömeg növelés</option>
+                        <option value="állóképesség">Állóképesség javítása</option>
+                        <option value="rehabilitáció">Rehabilitáció</option>
+                        <option value="egyéb">Egyéb</option>
+                    </select>
+
+                    <label for="experience">Edzettségi szinted:</label>
+                    <select id="experience" name="experience" required>
+                        <option value="">Kérlek válassz</option>
+                        <option value="kezdő">Kezdő</option>
+                        <option value="középhaladó">Középhaladó</option>
+                        <option value="haladó">Haladó</option>
+                    </select>
+
+                    <label for="availability">Mikor szeretnél edzeni? (időpontok, napok):</label>
+                    <textarea id="availability" name="availability" rows="3" required></textarea>
+
+                    <label for="notes">További megjegyzés / egészségügyi állapot / kérdés:</label>
+                    <textarea id="notes" name="notes" rows="4"></textarea>
+
+                    <button type="submit">Ajánlatot kérek</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="footer">
+            © 2025 Fodor Gábor | Minden jog fenntartva.
+          </div>
+        </div>
+    </div>
+</body>
+
+</html>

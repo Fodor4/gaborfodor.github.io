@@ -17,10 +17,6 @@
   transform: translateY(0);
 }
 
-.container {
-  width: 100%;
-}
-
 .navbar {
   background-color: rgb(11, 4, 4);
   font-family: "Rubik Wet Paint", system-ui;
@@ -71,6 +67,7 @@
   width: 100%;
   height: 90vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -83,23 +80,19 @@ h1 {
   font-size: 80px;
 }
 
-
 .main-video video {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
   position: absolute;
-  z-index: -1;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 30%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .link {
   display: inline-block;
-  margin: 150px auto 0;
+  margin-top: 40px;
   padding: 10px 25px;
   border: 2px 0px 1px 0px solid rgb(255, 255, 255);
   color: white;
@@ -146,16 +139,7 @@ h1 {
   position: relative;
 }
 
-.main-video {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  overflow: hidden;
-}
+
 
 
 .container {
@@ -203,11 +187,10 @@ h1 {
 .first-section {
   grid-area: first-section;
   background-color: #ffffff;
-  padding: 10px 0;
   display: flex;
   justify-content: center;
-  height: 900px;
   margin-bottom: 10px;
+  min-height: 900px;
 }
 
 p {
@@ -258,7 +241,7 @@ p {
   padding: 40px 25px;
   margin-bottom: 30px;
   border-radius: 15px;
-  width: 800px;
+  width: 700px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
@@ -303,15 +286,14 @@ p {
 }
 
 .introduction {
-  max-width: 900px;
+  max-width: 800px;
   font-size: 30px;
   text-align: center;
   background-color: #000000;
   color: white;
   border-radius: 20px;
-  padding: 60px;
-  padding-bottom: 30px;
-  line-height: 57px;
+  padding: 30px;
+  line-height: 54.3px;
   font-family: "Rubik Wet Paint", system-ui;
 }
 
@@ -462,6 +444,10 @@ h2 {
   background-color: rgb(155, 155, 155);
 }
 
+#orarend-page .third-section {
+  margin-top: 100px;
+}
+
 .contact-container {
   display: flex;
   flex-direction: row;
@@ -563,83 +549,461 @@ h2 {
   padding: 40px;
   font-family: "Rubik Wet Paint", system-ui;
 }
-
-.introduction-sub h1,
-.introduction-sub h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #000000;
-    padding: 50px;
-}
-
-.introduction-sub ul {
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.introduction-sub li {
-    margin-bottom: 8px;
-}
-
-.intr-section1 {
-  line-height: 50px;
-  font-family: "Rubik Wet Paint", system-ui;
-}
-
-.intr-section2 {
-  line-height: 50px;
-  font-family: "Rubik Wet Paint", system-ui;
-}
-
 .introduction-sub {
   grid-area: introduction-sub;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 40px 20px;
-  text-align: justify;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 50px 30px;
   box-sizing: border-box;
-  border-radius: 10px;
-  background-color: rgb(230, 230, 230);
+  border-radius: 15px;
+  background-color: #111; 
+  color: #f5f5f5; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
 }
 
-.introduction-sub li {
-  line-height: 40px;
-  font-family: "Rubik Wet Paint", system-ui;
+.introduction-sub h1,
+.introduction-sub h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-size: 2.2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #444;
+}
+
+.introduction-sub p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.intr-section1,
+.intr-section2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.8;
+  font-size: 1.1em;
 }
 
 .introduction-sub ul {
-  list-style-position: inside;
-  list-style-type: disc;
-  padding: 0;
+  list-style: disc inside;
   margin: 20px auto;
-  text-align: center;
-  display: block;
+  padding: 0;
+  text-align: left;
+  max-width: 90%;
 }
 
 .introduction-sub li {
-  display: block;
-  margin: 8px auto;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 1.05em;
+}
+
+.float,
+.float2 {
+  width: 30%;
+  height: auto;
+  margin: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .float {
-  float: left; 
-  width: 30%; 
-  padding: 2px;
-  height: auto;
-  margin: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  float: left;
 }
 
 .float2 {
-  float: right; 
-  width: 30%; 
-  padding: 2px;
-  height: auto;
-  margin: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  float: right;
+}
+
+.introduction-sub::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.timetable-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.timetable-wrapper h2 {
+  font-size: 48px;
+  margin: 40px 0 20px;
+  font-family: "Rubik Wet Paint", system-ui;
+  color: black;
+}
+
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 60px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.timetable:last-of-type {
+  margin-bottom: 60px;
+}
+
+.timetable th,
+.timetable td {
+  padding: 15px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.timetable thead {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.timetable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.timetable tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s;
+}
+
+.form-section {
+  background-color: #f3f3f3;
+  padding: 50px;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Quicksand", sans-serif;
+}
+
+.form-section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-family: "Rubik Wet Paint", system-ui;
+  color: black;
+}
+
+.trainer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trainer-form label {
+  font-weight: bold;
+}
+
+.trainer-form input,
+.trainer-form select,
+.trainer-form textarea,
+.trainer-form button {
+  padding: 12px;
+  border-radius: 8px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.trainer-form button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.trainer-form button:hover {
+  background-color: #d32f2f;
+}
+
+.reviews-wrapper {
+  max-width: 1900px; 
+  margin: 0 auto;
+  padding: 40px 30px;
+  font-family: Arial, sans-serif;
+  border-radius: 20px;
+  color: #ffffff;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 40px; 
+}
+
+.reviews-wrapper h1 {
+  grid-column: 1 / -1; 
+  text-align: center;
+  color: #000000;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
+  padding: 0 10px;
+}
+
+.review {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 15px;
+  color: #f0f0f0;
+  height: 100%;
+  text-align: center;
+}
+
+.review p {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #f0f0f0; 
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.review-info {
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+  color: #ccc; 
+  font-size: 0.9rem;
+}
+
+.review-info strong {
+  display: block;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.review-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #444;
+}
+
+.review.left {
+  flex-direction: row;
+}
+
+.review.right {
+  flex-direction: row-reverse;
+}
+
+.image-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+}
+
+.review-info {
+  margin-top: 10px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: black;
+  margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "social"
+      "navbar"
+      "main-video"
+      "first-section"
+      "introduction-sub"
+      "why-me-section"
+      "middle-section"
+      "second-section"
+      "third-section"
+      "footer";
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 18px;
+    padding: 8px 10px;
+  }
+
+  .main-video {
+    height: auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .first-section {
+    min-height: auto;
+  }
+
+  .main-video h1 {
+    font-size: 42px;
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .link {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+
+  .float,
+  .float2,
+  .szemelyi-edzo {
+    display: none;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    gap: 30px;
+  }
+
+  .introduction {
+    font-size: 20px;
+    line-height: 36px;
+    padding: 30px 20px;
+  }
+
+  .why-cards {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .why-card {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .packages {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .card {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  .reviews-wrapper {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .review {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .review-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 20px;
+  }
+
+  .contact-details {
+    padding: 30px 20px;
+    font-size: 18px;
+  }
+
+  .map {
+    min-height: 300px;
+  }
+
+  .form-section {
+    padding: 30px 20px;
+  }
+
+  .form-section h2 {
+    font-size: 26px;
+  }
+
+  .trainer-form input,
+  .trainer-form select,
+  .trainer-form textarea,
+  .trainer-form button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .timetable-wrapper h2 {
+    font-size: 32px;
+  }
+
+  .timetable {
+    font-size: 14px;
+  }
+
+  .timetable th,
+  .timetable td {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .link, .link2, .custom-button {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  .footer {
+    padding: 20px;
+    font-size: 14px;
+  }
 }
